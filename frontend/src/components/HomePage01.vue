@@ -3,7 +3,48 @@ import Offer from './Offer.vue'
 import Head from './Head.vue'
 import Description from './Description.vue'
 import Collection from './Collection.vue'
+import NewArrivals from './NewArrivals.vue'
 import FooterComp from './FooterComp.vue'
+
+const itemInfo = [
+  {
+    path: 'src/img/furniture/sofa.png',
+    rating: 5,
+    title: 'Loveseat Sofa',
+    price: '$199.00',
+    oldPrice: '$400.00',
+    discount: '-50%'
+  },
+  {
+    path: 'src/img/furniture/lamp.png',
+    rating: 5,
+    title: 'Table Lamp',
+    price: '$24.99',
+    discount: '-50%'
+  },
+  {
+    path: 'src/img/furniture/beige_lamp.png',
+    rating: 5,
+    title: 'Beige Table Lamp',
+    price: '$24.00',
+    discount: '-50%'
+  },
+  {
+    path: 'src/img/furniture/cart.png',
+    rating: 5,
+    title: 'Bamboo Basket',
+    price: '$10.50',
+    discount: '-50%'
+  },
+  {
+    path: 'src/img/furniture/toaster.png',
+    rating: 5,
+    title: 'Toaster',
+    price: '$249.25',
+    oldPrice: '$400.00',
+    discount: '-50%'
+  }
+]
 
 const goodsInfo = [
   { title: 'Living Room', img: '/src/img/rooms/living_room.svg', top: '7%', left: '8.6%' },
@@ -19,6 +60,7 @@ const collOffering = 'Shop Now'
     <div className="page">
       <Description />
       <Collection :goods="goodsInfo" :collOffer="collOffering" />
+      <NewArrivals :itemList="itemInfo" :wrap="'no-wrap'" header="New arrivals" />
     </div>
     <FooterComp />
   </div>

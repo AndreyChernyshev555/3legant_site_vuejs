@@ -31,8 +31,8 @@ const props = defineProps<Props>()
           left: `${goods[0].left}`
         }"
       >
-        <div>{{goods[0].title}}</div>
-        <div className="collection_link">{{collOffer}}</div>
+        <div>{{ goods[0].title }}</div>
+        <div className="collection_link">{{ collOffer }}</div>
       </div>
     </div>
     <div
@@ -43,8 +43,8 @@ const props = defineProps<Props>()
       }"
     >
       <div className="collection_sub-text">
-        <div>{{goods[1].title}}</div>
-        <div className="collection_link">{{collOffer}}</div>
+        <div>{{ goods[1].title }}</div>
+        <div className="collection_link">{{ collOffer }}</div>
       </div>
     </div>
     <div
@@ -55,8 +55,8 @@ const props = defineProps<Props>()
       }"
     >
       <div className="collection_sub-text">
-        <div>{{goods[2].title}}</div>
-        <div className="collection_link">{{collOffer}}</div>
+        <div>{{ goods[2].title }}</div>
+        <div className="collection_link">{{ collOffer }}</div>
       </div>
     </div>
   </div>
