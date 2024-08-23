@@ -2,7 +2,15 @@
 import Offer from './Offer.vue'
 import Head from './Head.vue'
 import Description from './Description.vue'
+import Collection from './Collection.vue'
 import FooterComp from './FooterComp.vue'
+
+const goodsInfo = [
+  { title: 'Living Room', img: '/src/img/rooms/living_room.svg', top: '7%', left: '8.6%' },
+  { title: 'Bedroom', img: '/src/img/rooms/bedroom.svg' },
+  { title: 'Kitchen', img: '/src/img/rooms/kitchen.svg' }
+]
+const collOffering = 'Shop Now'
 </script>
 <template>
   <div>
@@ -10,6 +18,7 @@ import FooterComp from './FooterComp.vue'
     <Head />
     <div className="page">
       <Description />
+      <Collection :goods="goodsInfo" :collOffer="collOffering" />
     </div>
     <FooterComp />
   </div>
