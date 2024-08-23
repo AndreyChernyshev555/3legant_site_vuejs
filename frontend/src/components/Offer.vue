@@ -29,7 +29,7 @@ $offer-background: #f3f5f7;
   font-weight: 600;
   line-height: 22px;
   height: 40px;
-  padding: 0% 12.5% 0% 12.5%;
+  padding: 0% 11.1% 0% 11.1%;
 }
 .offer_center {
   display: flex;

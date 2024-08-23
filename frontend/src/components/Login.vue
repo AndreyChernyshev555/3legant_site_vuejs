@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+import { useRouter, useRoute } from 'vue-router'
+const router = useRouter()
+const route = useRoute()
+</script>
+
 <template>
   <div className="enter-page">
     <div className="enter-page_logo">
@@ -33,7 +38,9 @@
           </label>
         </div>
       </form>
-      <button className="enter-block_button">Sign up</button>
+      <button className="enter-block_button" @click="router.push({ name: 'home1' })">
+        Sign up
+      </button>
     </div>
   </div>
 </template>
@@ -56,7 +63,7 @@
   position: relative;
 }
 .enter-page_logo-img {
-  background: url('../../img/main_img_left.svg');
+  background: url('@/img/main_img_left.svg');
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
