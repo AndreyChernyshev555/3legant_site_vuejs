@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  export interface article {
-    path: string
-    label: string
-    id?: number
-  }
-  const props = defineProps<article>();
+export interface article {
+  path: string
+  label: string
+  id?: number
+}
+const props = defineProps<article>()
 </script>
 
 <template>

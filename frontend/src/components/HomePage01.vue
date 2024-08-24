@@ -8,6 +8,7 @@ import type { arrival } from './NewArrivalsItem.vue'
 import Pros from './Pros.vue'
 import Info2 from './Info2.vue'
 import Article from './Article.vue'
+import Newsletter from './Newsletter.vue'
 import FooterComp from './FooterComp.vue'
 
 const itemInfo: arrival[] = [
@@ -65,6 +66,7 @@ const collOffering = 'Shop Now'
       <Pros />
       <Info2 />
       <Article />
+      <Newsletter :path="'/src/img/newsletter.png'" />
     </div>
     <FooterComp />
   </div>
@@ -100,67 +102,6 @@ body {
   width: 75%;
   margin-left: 12.5%;
   margin-right: 12.5%;
-}
-.newsletter {
-  background-size: cover;
-  padding: 7.05% 33% 7.05% 33%;
-}
-.newsletter_block {
-  background-color: rgba(0, 0, 0, 0);
-}
-.newsletter_text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.newsletter_header {
-  font-family: Poppins;
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 44px;
-  letter-spacing: -0.4px;
-}
-.newsletter_desc {
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  padding-bottom: 20px;
-}
-.newsletter_form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: solid 0.5px #afb3b5;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  color: $secondary-color;
-  width: 100%;
-}
-
-.newsletter_form-left {
-  display: flex;
-  flex-direction: row;
-  gap: 2.5%;
-  width: 85%;
-}
-
-.newsletter_form-right {
-  width: 15%;
-}
-
-.newsletter_form-input {
-  border: 0;
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 28px;
-  letter-spacing: -0.4px;
-  width: 90%;
-  background-color: rgba(0, 0, 0, 0);
-  &:focus {
-    outline: none;
-  }
 }
 
 @media screen and (max-width: 480px) {
