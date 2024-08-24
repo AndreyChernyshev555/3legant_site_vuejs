@@ -4,9 +4,13 @@ import Head from './Head.vue'
 import Description from './Description.vue'
 import Collection from './Collection.vue'
 import NewArrivals from './NewArrivals.vue'
+import type { arrival } from './NewArrivalsItem.vue'
+import Pros from './Pros.vue'
+import Info2 from './Info2.vue'
+import Article from './Article.vue'
 import FooterComp from './FooterComp.vue'
 
-const itemInfo = [
+const itemInfo: arrival[] = [
   {
     path: 'src/img/furniture/sofa.png',
     rating: 5,
@@ -19,22 +23,19 @@ const itemInfo = [
     path: 'src/img/furniture/lamp.png',
     rating: 5,
     title: 'Table Lamp',
-    price: '$24.99',
-    discount: '-50%'
+    price: '$24.99'
   },
   {
     path: 'src/img/furniture/beige_lamp.png',
     rating: 5,
     title: 'Beige Table Lamp',
-    price: '$24.00',
-    discount: '-50%'
+    price: '$24.00'
   },
   {
     path: 'src/img/furniture/cart.png',
     rating: 5,
     title: 'Bamboo Basket',
-    price: '$10.50',
-    discount: '-50%'
+    price: '$10.50'
   },
   {
     path: 'src/img/furniture/toaster.png',
@@ -61,6 +62,9 @@ const collOffering = 'Shop Now'
       <Description />
       <Collection :goods="goodsInfo" :collOffer="collOffering" />
       <NewArrivals :itemList="itemInfo" :wrap="'no-wrap'" header="New arrivals" />
+      <Pros />
+      <Info2 />
+      <Article />
     </div>
     <FooterComp />
   </div>
@@ -96,98 +100,6 @@ body {
   width: 75%;
   margin-left: 12.5%;
   margin-right: 12.5%;
-}
-
-.info2 {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.info2_img {
-  width: 50%;
-}
-
-.info2_offer {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  background-color: $info-background;
-  padding: 8.33% 8.33% 5.2% 5.2%;
-}
-.info2_offer-sale-up {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 16px;
-  color: $blue-accent;
-}
-.info2_offer-head {
-  font-family: Poppins;
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 44px;
-  letter-spacing: -0.4px;
-}
-.info2_offer-desc {
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 32px;
-}
-.info2_offer-link {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 28px;
-  letter-spacing: -0.4;
-  a:link {
-    color: black;
-  }
-  a:visited {
-    color: $secondary-color;
-  }
-}
-.articles {
-  padding: 4.16% 10% 4.16% 10%;
-}
-.articles_header {
-  font-family: Poppins;
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 44px;
-  letter-spacing: -0.4;
-  padding-bottom: 40px;
-}
-.articles_block {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.articles_item {
-  display: flex;
-  flex-direction: column;
-  width: 31.23%;
-  gap: 12px;
-}
-.articles_name {
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 28px;
-}
-.articles_read {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 28px;
-  letter-spacing: -0.4;
-  &:link {
-    color: black;
-  }
-  &:visited {
-    color: $secondary-color;
-  }
 }
 .newsletter {
   background-size: cover;

@@ -26,7 +26,7 @@ const props = defineProps<Props>()
 <template>
   <div className="new-arrivals">
     <div className="new-arrivals_text">
-      <div className="new-arrivals_text-item1">{{header}}</div>
+      <div className="new-arrivals_text-item1">{{ header }}</div>
       <a className="new-arrivals_text-item2" href="https://dzen.ru"> More products &#8594; </a>
     </div>
     <!--<div className="new-arrivals_goods" :style="goodsStyles">-->

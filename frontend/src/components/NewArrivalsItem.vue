@@ -4,8 +4,8 @@ export interface arrival {
   rating: number
   title: string
   price: string
-  oldPrice: string | undefined
-  discount: string | undefined
+  oldPrice?: string
+  discount?: string
 }
 
 const props = defineProps<arrival>()
@@ -25,7 +25,7 @@ const props = defineProps<arrival>()
     >
       <div className="new-arrivals_img-info">
         <div className="new-arrivals_new">NEW</div>
-        <div className="new-arrivals_discount">{{ discount }}</div>
+        <div className="new-arrivals_discount" v-if="discount">{{ discount }}</div>
       </div>
       <div className="new-arrivals_add-button">Add to cart</div>
     </div>
@@ -54,7 +54,6 @@ $blue-accent: #377dff;
   flex-direction: row;
   justify-content: space-between;
 }
-
 
 .new-arrivals_goods-item {
   display: flex;
