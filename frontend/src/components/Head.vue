@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter, useRoute } from 'vue-router'
+const router = useRouter()
+const route = useRoute()
+</script>
 
 <template>
   <div className="head">
@@ -7,7 +11,7 @@
       3legant.
     </div>
     <div className="head_section-block">
-      <span className="head_section">Home</span>
+      <span className="head_section" @click="router.push({name: 'home1'})">Home</span>
       <span className="head_section">Shop</span>
       <span className="head_section">Product</span>
       <span className="head_section">Contact us</span>
@@ -16,7 +20,11 @@
       <img className="head_button" src="../img/icons/search.svg" />
       <img className="head_button" src="../img/icons/user.svg" />
       <div className="head_cart">
-        <img className="head_button" src="../img/icons/cart.svg" />
+        <img
+          className="head_button"
+          src="../img/icons/cart.svg"
+          @click="router.push({ name: 'cart' })"
+        />
       </div>
     </div>
   </div>

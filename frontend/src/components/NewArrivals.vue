@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import NewArrivalsItem from './NewArrivalsItem.vue'
-import type { arrival } from './NewArrivalsItem.vue'
+import type { goods } from './NewArrivalsItem.vue'
 
 interface Props {
-  itemList: arrival[]
+  itemList: goods[]
   wrap: string
   header: string
 }

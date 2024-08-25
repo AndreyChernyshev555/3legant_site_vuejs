@@ -16,6 +16,7 @@ const handleRightClick = function () {
   if (currImg.value < imageList.length - 1) currImg.value++
   else currImg.value = 0
 }
+let timerId = setInterval(() => handleRightClick(), 3000)
 </script>
 
 <template>
@@ -39,7 +40,7 @@ const handleRightClick = function () {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: '64%',
           width: '60vw',
-          height: '25vw'
+          height: '29vw'
         }"
       />
     </div>
@@ -54,7 +55,7 @@ const handleRightClick = function () {
         class="slide_indicator-item"
         v-for="n in imageList.length"
         :key="n"
-        :class="{ 'slide_indicator-item__light': (n-1) == currImg }"
+        :class="{ 'slide_indicator-item__light': n - 1 == currImg }"
       ></div>
     </div>
   </div>
@@ -99,8 +100,8 @@ $secondary-color: #6c7275;
   position: absolute;
   border-radius: 50%;
   background-color: $info-background;
-  width: 3vw;
-  height: 3vw;
+  width: 2.5vw;
+  height: 2.5vw;
   top: 45.275%;
 }
 .slide_button-left {

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-interface goodsItem {
+interface partition {
   title: string
   img: string
   top?: string
@@ -7,7 +7,7 @@ interface goodsItem {
 }
 
 interface Props {
-  goods: goodsItem[]
+  partitions: partition[]
   collOffer: string
 }
 
@@ -19,7 +19,7 @@ const props = defineProps<Props>()
     <div
       className="collection_main"
       :style="{
-        background: `url(${goods[0].img})`,
+        background: `url(${partitions[0].img})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
       }"
@@ -27,35 +27,35 @@ const props = defineProps<Props>()
       <div
         className="collection_main-text"
         :style="{
-          top: `${goods[0].top}`,
-          left: `${goods[0].left}`
+          top: `${partitions[0].top}`,
+          left: `${partitions[0].left}`
         }"
       >
-        <div>{{ goods[0].title }}</div>
+        <div>{{ partitions[0].title }}</div>
         <div className="collection_link">{{ collOffer }}</div>
       </div>
     </div>
     <div
       className="collection_sub-item"
       :style="{
-        background: `url(${goods[1].img})`,
+        background: `url(${partitions[1].img})`,
         backgroundSize: 'cover'
       }"
     >
       <div className="collection_sub-text">
-        <div>{{ goods[1].title }}</div>
+        <div>{{ partitions[1].title }}</div>
         <div className="collection_link">{{ collOffer }}</div>
       </div>
     </div>
     <div
       className="collection_sub-item"
       :style="{
-        background: `url(${goods[2].img})`,
+        background: `url(${partitions[2].img})`,
         backgroundSize: 'cover'
       }"
     >
       <div className="collection_sub-text">
-        <div>{{ goods[2].title }}</div>
+        <div>{{ partitions[2].title }}</div>
         <div className="collection_link">{{ collOffer }}</div>
       </div>
     </div>

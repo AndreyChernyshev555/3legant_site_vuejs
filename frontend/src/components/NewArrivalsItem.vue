@@ -1,5 +1,7 @@
 <script setup lang="ts">
-export interface arrival {
+import { ref } from 'vue'
+import { useStore } from 'vuex'
+export interface goods {
   path: string
   rating: number
   title: string
@@ -8,15 +10,20 @@ export interface arrival {
   discount?: string
 }
 
-const props = defineProps<arrival>()
+const props = defineProps<goods>()
+const isHovered = ref(false)
+const handleHover = () => {
+  isHovered.value = !isHovered.value
+}
+const store = useStore()
 </script>
 
 <template>
   <div className="new-arrivals_goods-item">
     <div
       className="new-arrivals_img"
-      onMouseEnter="{handleHover}"
-      onMouseLeave="{handleHover}"
+      @mouseenter="handleHover"
+      @mouseleave="handleHover"
       :style="{
         backgroundImage: `url(${path})`,
         backgroundSize: 'contain',
@@ -27,7 +34,13 @@ const props = defineProps<arrival>()
         <div className="new-arrivals_new">NEW</div>
         <div className="new-arrivals_discount" v-if="discount">{{ discount }}</div>
       </div>
-      <div className="new-arrivals_add-button">Add to cart</div>
+      <div
+        className="new-arrivals_add-button"
+        :style="{ opacity: isHovered ? 1 : 0 }"
+        @click="store.dispatch('addGoods', props)"
+      >
+        Add to cart
+      </div>
     </div>
     <div className="new-arrivals_description">
       <span className="new-arrivals_rating">
@@ -67,7 +80,7 @@ $blue-accent: #377dff;
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
-  width: 11.1vw;
+  width: 14vw;
   height: 16vw;
 }
 

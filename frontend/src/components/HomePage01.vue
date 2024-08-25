@@ -5,19 +5,20 @@ import Slider from './Slider.vue'
 import Description from './Description.vue'
 import Collection from './Collection.vue'
 import NewArrivals from './NewArrivals.vue'
-import type { arrival } from './NewArrivalsItem.vue'
+import type { goods } from './NewArrivalsItem.vue'
 import Pros from './Pros.vue'
 import Info2 from './Info2.vue'
 import Article from './Article.vue'
 import Newsletter from './Newsletter.vue'
 import FooterComp from './FooterComp.vue'
 
-const itemInfo: arrival[] = [
+const itemInfo: goods[] = [
   {
     path: 'src/img/furniture/sofa.png',
     rating: 5,
     title: 'Loveseat Sofa',
     price: '$199.00',
+    amount: 1,
     oldPrice: '$400.00',
     discount: '-50%'
   },
@@ -25,19 +26,22 @@ const itemInfo: arrival[] = [
     path: 'src/img/furniture/lamp.png',
     rating: 5,
     title: 'Table Lamp',
-    price: '$24.99'
+    price: '$24.99',
+    amount: 1
   },
   {
     path: 'src/img/furniture/beige_lamp.png',
     rating: 5,
     title: 'Beige Table Lamp',
-    price: '$24.00'
+    price: '$24.00',
+    amount: 1
   },
   {
     path: 'src/img/furniture/cart.png',
     rating: 5,
     title: 'Bamboo Basket',
-    price: '$10.50'
+    price: '$10.50',
+    amount: 1
   },
   {
     path: 'src/img/furniture/toaster.png',
@@ -45,11 +49,12 @@ const itemInfo: arrival[] = [
     title: 'Toaster',
     price: '$249.25',
     oldPrice: '$400.00',
-    discount: '-50%'
+    discount: '-50%',
+    amount: 1
   }
 ]
 
-const goodsInfo = [
+const partitionInfo = [
   { title: 'Living Room', img: '/src/img/rooms/living_room.svg', top: '7%', left: '8.6%' },
   { title: 'Bedroom', img: '/src/img/rooms/bedroom.svg' },
   { title: 'Kitchen', img: '/src/img/rooms/kitchen.svg' }
@@ -63,7 +68,7 @@ const collOffering = 'Shop Now'
     <div className="page">
       <Slider />
       <Description />
-      <Collection :goods="goodsInfo" :collOffer="collOffering" />
+      <Collection :partitions="partitionInfo" :collOffer="collOffering" />
       <NewArrivals :itemList="itemInfo" :wrap="'no-wrap'" header="New arrivals" />
       <Pros />
       <Info2 />
