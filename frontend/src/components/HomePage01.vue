@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Offer from './Offer.vue'
 import Head from './Head.vue'
+import Slider from './Slider.vue'
 import Description from './Description.vue'
 import Collection from './Collection.vue'
 import NewArrivals from './NewArrivals.vue'
@@ -60,6 +61,7 @@ const collOffering = 'Shop Now'
     <Offer />
     <Head />
     <div className="page">
+      <Slider />
       <Description />
       <Collection :goods="goodsInfo" :collOffer="collOffering" />
       <NewArrivals :itemList="itemInfo" :wrap="'no-wrap'" header="New arrivals" />
