@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useStore } from 'vuex'
+import { useGoodsStore } from '../store'
 export interface goods {
   path: string
   rating: number
   title: string
   price: string
+  amount?: number
   oldPrice?: string
   discount?: string
 }
@@ -15,7 +16,12 @@ const isHovered = ref(false)
 const handleHover = () => {
   isHovered.value = !isHovered.value
 }
-const store = useStore()
+
+const store = useGoodsStore()
+const handleClick = () => {
+  store.addGoods(props)
+  console.log('newArrivalsClick')
+}
 </script>
 
 <template>
@@ -37,7 +43,7 @@ const store = useStore()
       <div
         className="new-arrivals_add-button"
         :style="{ opacity: isHovered ? 1 : 0 }"
-        @click="store.dispatch('addGoods', props)"
+        @click="handleClick"
       >
         Add to cart
       </div>

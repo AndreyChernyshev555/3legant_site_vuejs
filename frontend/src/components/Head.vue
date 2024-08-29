@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { useRouter, useRoute } from 'vue-router'
+import { useGoodsStore } from '@/store'
+import { computed } from 'vue'
 const router = useRouter()
 const route = useRoute()
+const store = useGoodsStore()
+const amount = computed(() => store.goodsCart.length)
 </script>
 
 <template>
@@ -11,7 +15,7 @@ const route = useRoute()
       3legant.
     </div>
     <div className="head_section-block">
-      <span className="head_section" @click="router.push({name: 'home1'})">Home</span>
+      <span className="head_section" @click="router.push({ name: 'home1' })">Home</span>
       <span className="head_section">Shop</span>
       <span className="head_section">Product</span>
       <span className="head_section">Contact us</span>
@@ -25,6 +29,9 @@ const route = useRoute()
           src="../img/icons/cart.svg"
           @click="router.push({ name: 'cart' })"
         />
+        <div className="head_indicator" :style="{ display: amount > 0 ? 'block' : 'none' }">
+          {{ amount }}
+        </div>
       </div>
     </div>
   </div>
@@ -96,8 +103,6 @@ $secondary-color: #6c7275;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  align-content: center;
-  text-align: center;
   font-family: Inter;
   font-size: 12px;
   font-weight: 700;
