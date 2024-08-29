@@ -26,7 +26,7 @@ const router = createRouter({
   ],
   history: createWebHistory()
 })
-const pinia = createPinia();
+const pinia = createPinia()
 
 app.use(router)
 app.use(pinia)
