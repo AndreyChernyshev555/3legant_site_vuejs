@@ -61,6 +61,7 @@ const partitionInfo = [
 ]
 const collOffering = 'Shop Now'
 </script>
+
 <template>
   <div>
     <Offer />
